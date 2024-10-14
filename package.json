@@ -1,0 +1,31 @@
+{
+  "name": "todonow",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": ">=2.0.0",
+    "@tauri-apps/plugin-shell": ">=2.0.0",
+    "axios": "^1.7.7",
+    "js-md5": "^0.8.3",
+    "naive-ui": "^2.40.1",
+    "vue": "^3.3.4",
+    "vue-router": "^4.4.5",
+    "vue3-slide-verify": "^1.1.5"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": ">=2.0.0",
+    "@types/node": "^22.7.5",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "sass-embedded": "^1.79.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1",
+    "vue-tsc": "^2.0.22"
+  }
+}
