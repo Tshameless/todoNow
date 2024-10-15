@@ -21,10 +21,10 @@ const themeOverrides: GlobalThemeOverrides = {
     primaryColorPressed: "#2a67a5",
     primaryColorSuppl: "#2a67a5",
     hoverColor: "#efefef",
-    infoColor: '#5D6FE3',
-    infoColorHover: "#5D6FE350",
-    infoColorPressed: "#5D6FE380",
-    infoColorSuppl: "#5D6FE380",
+    infoColor: '#008000',
+    infoColorHover: "#008200",
+    infoColorPressed: "#008200",
+    infoColorSuppl: "#008200",
     inputColor:'#33363900' //input框背景颜色
   },
   Form: {

@@ -14,3 +14,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
 
 You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+
+//https://blog.csdn.net/weixin_44786530/article/details/138795670
+//https://muyacode.github.io/FrontEndLearnNotes/Document/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%A1%8C%E9%9D%A2%E7%AB%AF%E5%BC%80%E5%8F%91/Tauri%E6%A1%86%E6%9E%B6/Tauri2%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E5%92%8C%E6%89%93%E5%8C%85
+以上两个地址协助打包android的apk，先安装android的sdk以及ndk，然后初始化项目npm run tauri init,然后运行npm run tauri android dev,

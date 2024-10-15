@@ -1,13 +1,27 @@
 export default [
     {
         path: '/',
-        // redirect: '/home',
-        name: 'home',
-        component: () => import('@/Pages/Login.vue'),
         meta:{
-            title: 'Home'
+            title: 'Login'
         },
         children:[]
+    },
+    {
+        path: '/Login',
+        name: 'Login',
+        component: () => import('@/Pages/Login.vue'),
+        meta:{
+            title: 'Login'
+        }
+    },
+    {
+    path:'/register',
+    name:'register',
+    component: () => import('@/Pages/Register.vue'),
+    meta:{
+        title: 'Register'
+    },
+    children:[]
     },
     {
         path: '/:pathMatch(.*)*',

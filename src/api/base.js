@@ -1,9 +1,4 @@
 
-// import md5 from 'js-md5';
-// Vue.prototype.$md5 = md5;
-// export const dmd5 = (str) => {    //故障数字转中文
-//     return   this.$md5('huamod'+this.$md5(str)) 
-// };
 //常用变量
 const ECHART_COLOR = ['#C1C9FF','#6677E6', '#46B3E7', '#3379D5', '#6ECDB9', '#999999', '#E5E19A', '#EEEEEE']
 const MAP_CONFIG = [
