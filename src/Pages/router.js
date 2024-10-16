@@ -1,8 +1,9 @@
 export default [
     {
         path: '/',
+        redirect: '/Login',
         meta:{
-            title: 'Login'
+            title: 'home'
         },
         children:[]
     },

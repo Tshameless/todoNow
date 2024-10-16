@@ -42,6 +42,9 @@ const formValue = reactive({
     code:null,
     phone:null
 });
+const handleRegister = () => {
+  router.push('/login')
+}
 </script>
 <style scoped lang='scss'>
 .container {

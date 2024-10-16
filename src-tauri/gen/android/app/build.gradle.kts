@@ -1,4 +1,5 @@
 import java.util.Properties
+import java.io.FileInputStream
 
 plugins {
     id("com.android.application")
@@ -23,7 +24,26 @@ android {
         targetSdk = 34
         versionCode = tauriProperties.getProperty("tauri.android.versionCode", "1").toInt()
         versionName = tauriProperties.getProperty("tauri.android.versionName", "1.0")
+        ndk{
+            abiFilters.addAll(arrayOf( "arm64-v8a"))
+        }
     }
+    signingConfigs {
+    create("release") {
+        val keystorePropertiesFile = rootProject.file("keystore.properties")
+        val keystoreProperties = Properties()
+        if (keystorePropertiesFile.exists()) {
+            keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+        }
+
+      keyAlias = keystoreProperties["keyAlias"] as? String ?: throw IllegalArgumentException("keyAlias is missing")
+keyPassword = keystoreProperties["keyPassword"] as? String ?: throw IllegalArgumentException("keyPassword is missing")
+storeFile = file(keystoreProperties["storeFile"] as? String ?: throw IllegalArgumentException("storeFile is missing"))
+storePassword = keystoreProperties["storePassword"] as? String ?: throw IllegalArgumentException("storePassword is missing")
+
+    }
+}
+
     buildTypes {
         getByName("debug") {
             manifestPlaceholders["usesCleartextTraffic"] = "true"
@@ -37,6 +57,7 @@ android {
             }
         }
         getByName("release") {
+             signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
             proguardFiles(
                 *fileTree(".") { include("**/*.pro") }
