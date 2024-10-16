@@ -30,6 +30,7 @@ const formValue = reactive({
 
 const handleSubmit=()=>{
   console.log(formValue);
+  router.push('/Calendar');
 }
 const handleRegister=()=>{
   router.push('/register');

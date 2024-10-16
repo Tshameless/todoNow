@@ -25,6 +25,14 @@ export default [
     children:[]
     },
     {
+        path:'/calendar',
+        name:'calendar',
+        component: () => import('@/Pages/Calendar.vue'),
+        meta:{
+            title: 'Calendar'
+        }
+    },
+    {
         path: '/:pathMatch(.*)*',
         // redirect: '/NotFound',
         name: 'NotFound',
