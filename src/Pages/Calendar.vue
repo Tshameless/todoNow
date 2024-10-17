@@ -13,7 +13,6 @@ import interactionPlugin from '@fullcalendar/interaction'
 import listPlugin from '@fullcalendar/list'
 import {Calendar} from '@fullcalendar/core'
 import dayjs from 'dayjs'
-import func from '../../vue-temp/vue-editor-bridge'
 const actionTimeValue = ref(dayjs(new Date()).format('YYYY-MM-DD'))
 const initCalendar = () => {
   let calendarEl = document.getElementById('calendar');
