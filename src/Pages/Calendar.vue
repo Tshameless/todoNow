@@ -13,6 +13,7 @@ import interactionPlugin from '@fullcalendar/interaction'
 import listPlugin from '@fullcalendar/list'
 import {Calendar} from '@fullcalendar/core'
 import dayjs from 'dayjs'
+import func from '../../vue-temp/vue-editor-bridge'
 const actionTimeValue = ref(dayjs(new Date()).format('YYYY-MM-DD'))
 const initCalendar = () => {
   let calendarEl = document.getElementById('calendar');
@@ -54,9 +55,10 @@ const initCalendar = () => {
       }
     }
   },
+
   headerToolbar: {
     left: 'prev,next,myCustomButton',
-    center: 'title',
+    // center: 'title',
     right: 'today,timeGridDay,timeGridWeek,dayGridMonth,list'
   },
 
@@ -70,9 +72,16 @@ dateClick: function(info) {
 //     info.dayEl.classList.add("selected-date");
     actionTimeValue.value = info.dateStr;
    calendar.changeView('timeGridDay', info.dateStr);
-},
+   //查看当前所处视图
+    //打印当前选中的时间
+  calendar.addEvent(addToDoEvent(info))
+  },
+ 
 //在timeGridDay视图下，点击时间段可以添加事件
+select:function(info){
+  calendar.addEvent(addToDoEvent(info))
 
+},
 
     dropAccept: ".eventListItems",
     aspectRatio: 0.5,
@@ -91,6 +100,12 @@ allDayText: '全天', // 自定义全天日程文本
   });
   calendar.render();
 
+}
+const addToDoEvent = (info) => {
+return {
+  title: '新事件',
+  start: info.dateStr,
+}
 }
 const   weekNumberContent=(arg)=> {
     return '第' + arg.num + '周'
