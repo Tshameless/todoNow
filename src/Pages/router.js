@@ -1,7 +1,7 @@
 export default [
     {
         path: '/',
-        redirect: '/Login',
+        redirect: '/calendar',
         meta:{
             title: 'home'
         },
